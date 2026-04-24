@@ -34,6 +34,7 @@ dependencies {
     // Redis
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
     implementation("org.apache.commons:commons-pool2")
+    testImplementation("io.mockk:mockk:1.14.9")
 
     // Testing
     testImplementation("org.springframework.boot:spring-boot-starter-test")
