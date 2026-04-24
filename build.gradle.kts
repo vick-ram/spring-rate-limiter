@@ -14,6 +14,7 @@ tasks.bootJar {
 
 tasks.jar {
     enabled = true
+    archiveClassifier.set("")
 }
 
 group = "com.vickram"
