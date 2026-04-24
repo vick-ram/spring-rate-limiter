@@ -5,10 +5,19 @@ plugins {
     id("io.spring.dependency-management") version "1.1.7"
     kotlin("plugin.jpa") version "2.2.21"
     kotlin("kapt") version "2.2.21"
+    `maven-publish`
+}
+
+tasks.bootJar {
+    enabled = false
+}
+
+tasks.jar {
+    enabled = true
 }
 
 group = "com.vickram"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 description = "Official spring boot rate limiter"
 
 java {
@@ -17,8 +26,8 @@ java {
     }
 }
 
+
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
@@ -52,4 +61,16 @@ kotlin {
 
 tasks.withType<Test> {
     useJUnitPlatform()
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+
+            groupId = "com.github.vick-ram"
+            artifactId = "springboot-rate-limiter"
+            version = "0.0.1"
+        }
+    }
 }
