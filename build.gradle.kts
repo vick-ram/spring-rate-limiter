@@ -69,7 +69,7 @@ publishing {
             from(components["java"])
 
             groupId = "com.github.vick-ram"
-            artifactId = "springboot-rate-limiter"
+            artifactId = "spring-rate-limiter"
             version = "0.0.1"
         }
     }
